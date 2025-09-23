@@ -19,7 +19,7 @@
   document.addEventListener('DOMContentLoaded',()=>{
     const lienzo= document.getElementById('lienzo')
     const otrolienzo= document.getElementById('otro-lienzo')
-    const grafico= new Chart(lienzo,{
+    const grafico1= new Chart(lienzo,{
       type:'bar',
       data:{
         labels:['Rock','Baladas','Metal'],
@@ -29,13 +29,23 @@
         ]
       }
     })
+    
+    const data=[
+      {year:2010,total:420},
+      {year:2011,total:492},
+      {year:2012,total:470},
+      {year:2013,total:510},
+      {year:2014,total:350},
+      {year:2015,total:600},
+    ]
+    
     const grafico2=new Chart(otrolienzo,{
       type:'line',
       data:{
-        labels:['2010','2011','2012','2013'],
+        labels:data.map(row=>row.year),
         datasets:[
           {
-            data:[420,492,470,510],
+            data:data.map(row=>row.total),
             label:'Egresados Ing. Software'
           }
         ]
