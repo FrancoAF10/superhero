@@ -19,3 +19,14 @@ $routes->post('/reportes/raceandalignment', 'ReporteController::getReportByRaceA
 
 //dashboard
 $routes->get('/dashboard/informe1', 'DashboardController::getInforme1');
+$routes->get('/dashboard/informe2', 'DashboardController::getInforme2');
+$routes->get('/dashboard/informe3', 'DashboardController::getInforme3');
+$routes->get('/dashboard/informe4', 'DashboardController::getInforme4');
+
+//API
+$routes->get('/public/api/getdatainforme2', 'DashboardController::getDataInforme2');
+$routes->get('/public/api/getdatainforme3', 'DashboardController::getDataInforme3');
+$routes->get('/public/api/getdatainforme3cache', 'DashboardController::getDataInforme3Cache');
+$routes->get('/public/api/getdatainforme4cache', 'DashboardController::getDataInforme4Cache');
+
+$routes->get('/xlsx/demo1', 'ReporteController::getExcel1');

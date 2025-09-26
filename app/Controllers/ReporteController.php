@@ -218,5 +218,8 @@ class ReporteController extends BaseController{
       }
       //return view('reportes/rpt_superhero', $datos);
     }
+    public function getExcel1(){
+      return view('xlsx/demo1');
+    }
 
 }
