@@ -30,3 +30,7 @@ $routes->get('/public/api/getdatainforme3cache', 'DashboardController::getDataIn
 $routes->get('/public/api/getdatainforme4cache', 'DashboardController::getDataInforme4Cache');
 
 $routes->get('/xlsx/demo1', 'ReporteController::getExcel1');
+
+$routes->get('/tarea06/pdf','TareaController::pdf');
+$routes->get('/tarea06/grafico1','TareaController::grafico1');
+$routes->get('/tarea06/grafico2','TareaController::grafico2');
