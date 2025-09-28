@@ -9,7 +9,7 @@
 <body>
     <h2 class="text-center mt-5">Ejercicio 1 - PDF</h2>
 
-    <form action="">
+    <form action="<?=base_url()?>ejercicio01/generarpdf" method="POST">
         <div class="container mt-5">
             <div class="card">
                 <div class="card-body">
@@ -23,15 +23,15 @@
                     </div>
                     <div class="row mt-4 ms-5">
                         <div class="col-md-4">
-                            <input type="checkbox" id="masculino" name="masculino">
-                            <label for="masculino">Masculino</label>
+                            <input type="checkbox" id="male" name="gender_id[]" value="1">
+                            <label for="male">Masculino</label>
                         </div>
                         <div class="col-md-4">
-                            <input type="checkbox" id="femenino" name="femenino">
-                            <label for="femenino">Femenino</label>
+                            <input type="checkbox" id="female" name="gender_id[]" value="2">
+                            <label for="female">Femenino</label>
                         </div>
                         <div class="col-md-4">
-                            <input type="checkbox" id="na" name="na">
+                            <input type="checkbox" id="na" name="gender_id[]" value="3">
                             <label for="na">NA</label>
                         </div>
                     </div>

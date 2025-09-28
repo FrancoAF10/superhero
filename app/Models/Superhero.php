@@ -31,4 +31,13 @@ protected $allowedFields = ['id','superhero_name','full_name','race','alignment'
     ->where('SH.alignment_id',$alignment_id)
     ->findAll();
   }
+  public function getSuperHeroByGender($gender_id){
+    return $this->select('SH.id, SH.superhero_name,SH.full_name, GD.gender, AL.alignment, PB.publisher_name')
+    ->join('gender GD','GD.id=SH.gender_id','left')
+    ->join('alignment AL','AL.id=alignment_id','left')
+    ->join('publisher PB','PB.id=publisher_id','left')
+    ->orderBy('SH.superhero_name','ASC')
+    ->whereIn('SH.gender_id',$gender_id)
+    ->findAll();
+  }
 }

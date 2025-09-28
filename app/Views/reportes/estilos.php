@@ -21,6 +21,7 @@
     .table{
       width:100%;
       border-collapse: collapse;
+      margin-top: 30px;
     }
     .table td, th{
       border:0.5 solid black;

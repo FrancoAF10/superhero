@@ -14,3 +14,15 @@ CREATE VIEW view_superhero_alignment AS
     FROM superhero SH
     LEFT JOIN alignment AL ON AL.id= SH.alignment_id
     GROUP BY SH.alignment_id;
+
+CREATE VIEW vista_gender_pdf AS
+    SELECT
+        SH.superhero_name,
+        SH.full_name,
+        GD.gender,
+        AL.alignment,
+        PB.publisher_name
+    FROM superhero SH
+    LEFT JOIN gender GD ON GD.id=SH.gender_id
+    LEFT JOIN alignment AL ON AL.id=alignment_id
+    LEFT JOIN publisher PB ON PB.id=publisher_id;
