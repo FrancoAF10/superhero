@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Publisher;
 use App\Models\Superhero;
+use App\Models\SuperHeroPublisher;
 use Spipu\Html2Pdf\Html2Pdf;
 use Spipu\Html2Pdf\Exception\Html2PdfException;
 use Spipu\Html2Pdf\Exception\ExceptionFormatter;
@@ -67,6 +68,29 @@ class TareaController extends BaseController
         $datos['publisher_name']=$publisher->orderBy('id','ASC')->findAll();
         return view('tarea06/grafico1',$datos);
     }
+    public function getgrafico1(){
+        $this->response->setContentType("application/json");
+        $shpublisher= new SuperHeroPublisher();//Modelo
+
+        $publisher_id = $this->request->getJSON()->publisher_id;
+        $data=$shpublisher->getsuperHeroByPublisher($publisher_id);
+
+        
+        if(!$data){
+        return $this->response->setJSON([
+            'success'=>false,
+            'message'=> 'No Encontramos super héroes',
+            'resumen'=>[]
+        ]);
+        }
+        //Cuando si encontramos datos si enviamos el JSON
+        return $this->response->setJSON([
+        'success'=>true,
+        'message'=> 'Alineaciones',
+        'resumen'=>$data
+        ]);
+    }
+
 
     //EJERCICIO 03
     public function grafico2(): string

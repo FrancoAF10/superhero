@@ -15,6 +15,7 @@ CREATE VIEW view_superhero_alignment AS
     LEFT JOIN alignment AL ON AL.id= SH.alignment_id
     GROUP BY SH.alignment_id;
 
+-- solo para guia al modelo
 CREATE VIEW vista_gender_pdf AS
     SELECT
         SH.superhero_name,
