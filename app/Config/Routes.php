@@ -32,8 +32,12 @@ $routes->get('/public/api/getdatainforme4cache', 'DashboardController::getDataIn
 
 $routes->get('/xlsx/demo1', 'ReporteController::getExcel1');
 
+//EJERCICIO 01
 $routes->get('/tarea06/pdf','TareaController::pdf');
 $routes->post('/ejercicio01/generarpdf','TareaController::generarpdf');
+//EJERCICIO 02 
 $routes->get('/tarea06/grafico1','TareaController::grafico1');
 $routes->post('/public/api/getgrafico1', 'TareaController::getgrafico1');
+//EJERCICIO 03
 $routes->get('/tarea06/grafico2','TareaController::grafico2');
+$routes->get('/public/api/getgrafico2', 'TareaController::getgrafico2');

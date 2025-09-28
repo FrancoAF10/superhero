@@ -16,4 +16,11 @@
     ->groupBy('PB.publisher_name')
     ->findAll();
   }
+  public function getAverageWeightBySuperHero(){
+    return $this->select('PB.publisher_name, AVG(SH.weight_kg) AS Total')
+    ->join('publisher PB','PB.id= SH.publisher_id','left')
+    ->groupBy('PB.publisher_name')
+    ->orderBy('Total','ASC')
+    ->findAll();
+  }
 }

@@ -98,4 +98,24 @@ class TareaController extends BaseController
         return view('tarea06/grafico2');
     }
 
+    public function getgrafico2(){
+        $this->response->setContentType("application/json");
+        $reportPublisher= new SuperHeroPublisher();//Modelo
+
+        $data=$reportPublisher->getAverageWeightBySuperHero();
+        
+        if(!$data){
+        return $this->response->setJSON([
+            'success'=>false,
+            'message'=> 'No Encontramos super héroes',
+            'resumen'=>[]
+        ]);
+        }
+        //Cuando si encontramos datos si enviamos el JSON
+        return $this->response->setJSON([
+        'success'=>true,
+        'message'=> 'Promedio PesoKG por Editora',
+        'resumen'=>$data
+        ]);
+    }
 }
