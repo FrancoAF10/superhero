@@ -6,6 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('/dashboard', 'DashboardController::index');
 $routes->get('/reportes/r1', 'ReporteController::getReport1');
 $routes->get('/reportes/r2', 'ReporteController::getReport2');
 $routes->get('/reportes/r3', 'ReporteController::getReport3');
@@ -30,3 +31,6 @@ $routes->get('/public/api/getdatainforme3cache', 'DashboardController::getDataIn
 $routes->get('/public/api/getdatainforme4cache', 'DashboardController::getDataInforme4Cache');
 
 $routes->get('/xlsx/demo1', 'ReporteController::getExcel1');
+
+//LOGIN
+$routes->post('/login','UsuarioController::login');

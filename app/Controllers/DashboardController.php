@@ -6,6 +6,10 @@ use App\Models\ReporteAlignment;
 use App\Models\ReportePublisher;
 
 class DashboardController extends BaseController{
+
+  public function index(){
+    return view("dashboard");
+  }
   public function getInforme1(){
     return view("dashboard/informe1");
   }
